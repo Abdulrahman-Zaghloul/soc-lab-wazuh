@@ -1,4 +1,4 @@
-\# SOC Lab: Wazuh SIEM Detection Project
+# SOC Lab: Wazuh SIEM Detection Project
 
 
 
@@ -8,49 +8,49 @@ endpoint monitoring, and incident detection/investigation.
 
 
 
-\## Architecture
+## Architecture
 
 
 
-\- \*\*Ubuntu (192.168.100.10)\*\* — Wazuh manager, indexer, and dashboard
+- **Ubuntu (192.168.100.10)** — Wazuh manager, indexer, and dashboard
 
-\- \*\*Windows 10 (192.168.100.30)\*\* — Monitored endpoint, Wazuh agent + Sysmon
+- **Windows 10 (192.168.100.30)** — Monitored endpoint, Wazuh agent + Sysmon
 
-\- \*\*Kali Linux (192.168.100.20)\*\* — Attacker machine
+- **Kali Linux (192.168.100.20)** — Attacker machine
 
-\- Isolated internal network ("LAB-NET") for inter-VM traffic, separate NAT adapters for internet access
-
-
-
-\## What this lab demonstrates
+- Isolated internal network ("LAB-NET") for inter-VM traffic, separate NAT adapters for internet access
 
 
 
-\- Deploying and configuring a Wazuh SIEM stack from scratch
-
-\- Installing and centrally configuring Sysmon for deep endpoint telemetry
-
-\- Simulating a real attack (SMB brute-force) and investigating it end-to-end
-
-\- Correlating raw Windows Security events into a detection narrative
-
-\- Writing a client-ready incident report
+## What this lab demonstrates
 
 
 
-\## Contents
+- Deploying and configuring a Wazuh SIEM stack from scratch
+
+- Installing and centrally configuring Sysmon for deep endpoint telemetry
+
+- Simulating a real attack (SMB brute-force) and investigating it end-to-end
+
+- Correlating raw Windows Security events into a detection narrative
+
+- Writing a client-ready incident report
 
 
 
-\- `/incidents` — Investigated attack scenarios, written up as formal incident reports
-
-\- `/setup` — Installation and configuration notes
-
-\- `/troubleshooting` — Real issues hit during setup and how they were resolved
+## Contents
 
 
 
-\## Skills demonstrated
+- `/incidents` — Investigated attack scenarios, written up as formal incident reports
+
+- `/setup` — Installation and configuration notes
+
+- `/troubleshooting` — Real issues hit during setup and how they were resolved
+
+
+
+## Skills demonstrated
 
 
 

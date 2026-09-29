@@ -42,7 +42,7 @@ correlation rule for repeated logon failures.
 
 | \~10:56:56 | Wazuh correlation rule 60204 "Multiple Windows Logon Failures" fires (level 10) |
 
-| \[PENDING] | Successful logon (Event ID 4624) confirmed for account vboxuser |
+| \~10:56:56 | Successful logon (Event ID 4624) confirmed for account vboxuser |
 
 
 

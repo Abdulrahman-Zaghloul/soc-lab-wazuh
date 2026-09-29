@@ -20,7 +20,7 @@ correlation rule for repeated logon failures.
 | ~10:56:56 | Wazuh logs first "Logon Failure - Unknown user or bad password" (rule 60122) |
 | ~10:56:56 | Six total failed attempts logged in rapid succession |
 | ~10:56:56 | Wazuh correlation rule 60204 "Multiple Windows Logon Failures" fires (level 10) |
-| [fill in from your successful-logon inspection screenshot] | Successful logon (Event ID 4624) confirmed for account vboxuser, logon type 3 |
+| ~10:56:56 | Successful logon (Event ID 4624) confirmed for account vboxuser, logon type 3 |
 
 ## Technical Details
 - **Protocol/Port:** SMB, TCP/445
@@ -36,6 +36,18 @@ Wazuh's default ruleset correlated six individual low-severity
 alert (rule 60204, level 10) once a threshold of repeated failures was
 reached within a short window. This is the built-in equivalent of
 brute-force detection logic.
+
+The alert was recorded and visible in the Wazuh dashboard, but no real-time
+notification (email, chat, ticket) was configured, so an analyst would only
+have seen it by actively reviewing the console.
+
+## MITRE ATT&CK Mapping
+
+| Tactic | Technique | Evidence |
+|---|---|---|
+| Discovery | T1046 Network Service Discovery | Nmap scan confirming SMB on TCP/445 |
+| Credential Access | T1110.001 Brute Force: Password Guessing | Repeated failed logons (rule 60122) from 192.168.100.20 |
+| Initial Access / Lateral Movement | T1078.003 Valid Accounts: Local Accounts; T1021.002 Remote Services: SMB/Windows Admin Shares | Successful type-3 logon (Event ID 4624) as `vboxuser` |
 
 ## Root Cause
 1. Weak password policy — `kali` is a trivially guessable password
